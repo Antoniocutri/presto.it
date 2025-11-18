@@ -15,3 +15,20 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5{
     font-family: "Stack Sans Notch", sans-serif;
 
 }
+
+.bg-green{
+    background-color: var(--green) !important;
+}
+
+.logo{
+    width: 3.5rem;
+}
+
+.nav-link{
+    color: var(--dark_grey);
+    font-weight: 700;
+}
+
+.nav-link:hover{
+    color: var(--orange);
+}
