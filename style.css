@@ -56,7 +56,7 @@ header{
 
 /* Card */
 .card-custom{
-    height: 250px;
+    height: 300px;
     transition: 0.5s;
     
 }
@@ -70,4 +70,21 @@ header{
 
 .positioned{
     bottom: 80px;
+}
+
+@media (max-width: 576px) {
+    .card-custom:hover{
+        transform: scale(1);
+    }
+    .card-custom{
+        height: 270px;
+    }
+}
+
+/* seller*/
+
+span{
+    font-size: 3rem;
+    font-weight: 800;
+
 }
