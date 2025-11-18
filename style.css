@@ -64,5 +64,10 @@ header{
 .card-custom:hover{
     transform: scale(1.2);
     z-index: 2;
+    color: #F5F5F5;
+    font-weight: 600;
 }
 
+.positioned{
+    bottom: 80px;
+}
