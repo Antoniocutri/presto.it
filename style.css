@@ -2,7 +2,7 @@
     --green: #3DDC97;
     --blu: #0E6B63;
     --white: #FFFFFF;
-    --orange: #FFB77C;
+    --orange: #E88A3D;
     --dark_grey: #333333;
     --light_grey:#F5F5F5;
 }
@@ -13,6 +13,7 @@
 
 h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5{
     font-family: "Stack Sans Notch", sans-serif;
+    color: var(--orange);
 
 }
 
@@ -35,4 +36,13 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5{
 
 .nav-link:hover{
     color: var(--light_grey) !important;
+}
+
+
+/* Header */
+
+header{
+    background-image: url('Media/fondale.png');
+    background-position: center;
+    background-size: cover;
 }
