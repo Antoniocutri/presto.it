@@ -16,6 +16,10 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5{
 
 }
 
+.bg-blu{
+    background-color: var(--blu) !important;
+}
+
 .bg-green{
     background-color: var(--green) !important;
 }
@@ -25,10 +29,10 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5{
 }
 
 .nav-link{
-    color: var(--dark_grey);
+    color: var(--orange);
     font-weight: 700;
 }
 
 .nav-link:hover{
-    color: var(--orange);
+    color: var(--light_grey) !important;
 }
