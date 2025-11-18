@@ -7,6 +7,9 @@
     --light_grey:#F5F5F5;
 }
 
+body{
+    background-color: var(--blu);
+}
 *{
     font-family: "Open Sans", sans-serif;
 }
@@ -19,6 +22,10 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5{
 
 .bg-blu{
     background-color: var(--blu) !important;
+}
+
+.bg-orange{
+    background-color: var(--orange);
 }
 
 .bg-green{
@@ -46,3 +53,16 @@ header{
     background-position: center;
     background-size: cover;
 }
+
+/* Card */
+.card-custom{
+    height: 250px;
+    transition: 0.5s;
+    
+}
+
+.card-custom:hover{
+    transform: scale(1.2);
+    z-index: 2;
+}
+
