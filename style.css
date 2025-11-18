@@ -1,0 +1,17 @@
+:root{
+    --green: #3DDC97;
+    --blu: #0E6B63;
+    --white: #FFFFFF;
+    --orange: #FFB77C;
+    --dark_grey: #333333;
+    --light_grey:#F5F5F5;
+}
+
+*{
+    font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5{
+    font-family: "Stack Sans Notch", sans-serif;
+
+}
