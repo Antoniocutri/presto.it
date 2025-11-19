@@ -50,23 +50,27 @@ fetch('./annunci.json').then((response)=> response.json() ).then((data)=>{
         });
     }
 
-    function filter_Category(category) {
+    let radioButtons = document.querySelectorAll('.form-check-input')
 
-        if (category != 'all') {
-            let filterd = data.filter((announce)=> announce.category == category)
-            console.log(filterd)
-            createCard(filterd)
-        } else{
-            createCard(data)
+    function filter_Category(array) {
+       
+        let checkedButton = Array.from(radioButtons).find(button => button.checked).id;
+
+        console.log(checkedButton)
+
+        if (checkedButton != 'all') {
+            let filterd = array.filter((announce)=> announce.category == checkedButton)
+            return filterd
         }
-        
+        return data
     }
 
-    let radioButtons = document.querySelectorAll('.form-check-input')
+
 
     radioButtons.forEach((button)=>{
         button.addEventListener('click',()=>{
-            filter_Category(button.id)
+            global_filter()
+            price_input()
         })
     })
 
@@ -74,14 +78,14 @@ fetch('./annunci.json').then((response)=> response.json() ).then((data)=>{
     let price_value = document.querySelector('#price_value')
 
     range.addEventListener('input', ()=>{
-        filter_price()
+        global_filter()
         price_value.textContent= range.value
     })
 
     price_input()
 
     function price_input() {
-        let prices = data.map((announce)=> +announce.price)
+        let prices = filter_Category(data).map((announce)=> +announce.price)
 
         prices.sort((a,b) => a - b)
         let maxPrice = Math.ceil(prices.pop())
@@ -92,23 +96,32 @@ fetch('./annunci.json').then((response)=> response.json() ).then((data)=>{
         
     }
 
-    function filter_price() {
-        let filterd = data.filter((announce)=> +announce.price <= range.value)
-        createCard(filterd)
+    function filter_price(array) {
+        let filterd = array.filter((announce)=> +announce.price <= range.value)
+       // createCard(filterd)
+       return filterd
     }
 
 
     let input_word = document.querySelector('#input_word')
 
-    function filter_word(string) {
-        let filtered = data.filter((announce)=> announce.name.toLowerCase().includes(string.toLowerCase()) )
-        createCard(filtered)
+    function filter_word(array) {
+        let filtered = array.filter((announce)=> announce.name.toLowerCase().includes(input_word.value.toLowerCase()) )
+        //createCard(filtered)
+        return filtered
 
     }
 
     input_word.addEventListener('input', ()=>{
-        filter_word(input_word.value)
+        global_filter()
     })
 
+    function global_filter() {
 
+        let filter_Categories = filter_Category(data)
+        let filter_priced = filter_price(filter_Categories)
+        let filter_global = filter_word(filter_priced)
+        
+        createCard(filter_global)
+    }
 })
