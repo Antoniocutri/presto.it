@@ -126,6 +126,9 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+}
 
+.img-card{
+    width: 100px;
+    height: 70px;
 }
