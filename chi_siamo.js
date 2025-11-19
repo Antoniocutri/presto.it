@@ -1,33 +1,49 @@
-let navbar = document.querySelector('#navbar')
-let links = document.querySelectorAll('.nav-link')
+let openerr= document.querySelector('.opener')
+let circle = document.querySelector('.circle')
 
-window.addEventListener('scroll', ()=>{
-    if (window.scrollY > 10) {
-        console.log(window.scrollY)
-        navbar.classList.remove('bg-blu')
-        navbar.classList.add('bg-green')
-        navbar.style.height = '130px' 
-        links.forEach(link => {
-            link.style.color = 'var(--dark_grey)'
+
+
+let teachers = [
+    {name: 'Matteo', description: 'Docente Frontend di Hackademy 69', url: 'Media/sinner.jpg'},
+    {name: 'Marco', description: 'Docente Frontend e responsabile Hackademy', url: 'Media/download.jpg'},
+    {name: 'Nicola', description: 'Docente Frontend e noto sex symbol', url: './media/santinooo.jpg'},
+    {name: 'Davide', description: 'Docente Backend e giocatore di ruolo', url: './media/volto_uomo.jpg'},
+]
+
+let check = false
+
+teachers.forEach(teacher => {
+    let div = document.createElement('div')
+    div.classList.add('moved', 'rounded-circle', 'border', 'border-3', 'border-white', 'opener', 'justify-content-center', 'align-items-center' ,'position-absolute')
+    div.style.backgroundImage = `url(${teacher.url})`
+    circle.appendChild(div)
+});
+
+let moved = document.querySelectorAll('.moved')
+
+openerr.addEventListener('click', ()=>{
+
+    if (!check) {
+        moved.forEach((element, index) => {
+            openerr.style.transform = 'rotate(405deg)'
+            let angle = 360 * index / moved.length 
+            element.style.transform = `rotate(${angle}deg) translate(150px) rotate(-${angle}deg)`
         });
-        
-    }else{
-        navbar.classList.remove('bg-green')
-        navbar.classList.add('bg-blu') 
-        links.forEach(link => {
-            link.style.color = 'var(--orange)'
+        check = true
+    } else {
+        moved.forEach((element) => {
+            openerr.style.transform = ''
+            element.style.transform = ``
         });
-        navbar.style.height = '70px' 
-        
+        check= false
     }
 })
-const toggler = document.querySelector('.navbar-toggler');
-toggler.addEventListener('click', () => {
-    const isOpen = toggler.getAttribute('aria-expanded') === "true";
 
-    if (isOpen) {
-        navbar.style.height = "200px";   // altezza quando aperto
-    } else {
-        navbar.style.height = "70px";    // altezza normale
-    }
-});
+
+moved.forEach((move, i)=>{
+    move.addEventListener('click', ()=>{
+
+        let teacher = move[i]
+
+    })
+})
