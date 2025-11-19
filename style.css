@@ -6,6 +6,9 @@
     --dark_grey: #333333;
     --light_grey:#F5F5F5;
 }
+.mt-10{
+    margin-top: 6rem;
+}
 
 body{
     background-color: var(--blu);
@@ -110,4 +113,19 @@ span{
 
 .swiper-button-next, .swiper-button-prev{
     color: var(--white);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--orange); 
+}
+
+.card-announce{
+
+    height: 12.5rem;
+    width: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
 }
