@@ -21,6 +21,16 @@ window.addEventListener('scroll', ()=>{
         
     }
 })
+const toggler = document.querySelector('.navbar-toggler');
+toggler.addEventListener('click', () => {
+    const isOpen = toggler.getAttribute('aria-expanded') === "true";
+
+    if (isOpen) {
+        navbar.style.height = "200px";   // altezza quando aperto
+    } else {
+        navbar.style.height = "70px";    // altezza normale
+    }
+});
 
 
 let counter = 0
