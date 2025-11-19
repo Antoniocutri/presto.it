@@ -88,3 +88,18 @@ span{
     font-weight: 800;
 
 }
+
+
+.swiper {
+  height: 600px;
+}
+
+.swiper-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-button-next, .swiper-button-prev{
+    color: var(--white);
+}
