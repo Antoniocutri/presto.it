@@ -20,6 +20,7 @@ teachers.forEach(teacher => {
 });
 
 let moved = document.querySelectorAll('.moved')
+let flip = document.querySelector('.flip-card')
 
 openerr.addEventListener('click', ()=>{
 
@@ -35,15 +36,25 @@ openerr.addEventListener('click', ()=>{
             openerr.style.transform = ''
             element.style.transform = ``
         });
+        flip.classList.add('d-none')
         check= false
     }
 })
 
 
+let inner_face = document.querySelector('.inner-face')
+let h2_back = document.querySelector('#h2-back')
+let p_back = document.querySelector('#p-back')
+
 moved.forEach((move, i)=>{
     move.addEventListener('click', ()=>{
+        flip.classList.remove('d-none')
+        let teacher = teachers[i]
+        console.log(teacher)
 
-        let teacher = move[i]
-
+        inner_face.style.backgroundImage = `url(${teacher.url})`
+        
+        h2_back.innerHTML = teacher.name
+        p_back.innerHTML = teacher.description
     })
 })

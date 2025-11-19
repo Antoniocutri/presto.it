@@ -170,3 +170,43 @@ span{
 .vh-75{
     height: 75vh;
 }
+
+.flip-card{
+    height: 400px;
+    width: 250px;
+
+}
+
+.flip-card:hover > .inner{
+    transform: rotatey(540deg);
+}
+
+.inner{
+    height: 100%;
+    width: 100%;
+    border: 5px dashed var(--green);
+    transition: 0.6s;
+    transform-style: preserve-3d
+}
+
+.inner-face{
+    height: 400px;
+    width: 250px;
+    background-image: url('Media/sinner.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+}
+
+.inner-back{
+    height: 400px;
+    width: 250px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    flex-direction: column;
+}
+.p-back{
+    color: #FFFFFF;
+    font-weight: 500;
+}
